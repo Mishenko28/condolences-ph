@@ -50,7 +50,7 @@ const recetActivities: RecetActivitiesType[] = [
         }
     },
     {
-        id: "b22a672f-d860-4165-b5f0-2b775a95030b",
+        id: "c0f701f5-9fcb-4972-a421-a23a3b48df04",
         message: {
             text: `You published a blog post: "Remembering Nanay: Her Favorite Recipes".`,
             boldText: "Remembering Nanay: Her Favorite Recipes"
