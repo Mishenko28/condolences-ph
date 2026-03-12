@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 @import "tailwindcss";
 
+/* pending */
+/* still has bugs on the font not applying */
+
 @theme inline {
     --color-primary: var(--primary);
     --color-border: var(--border);
@@ -11,13 +14,14 @@
     --primary: #333333;
     --border: #E5E2DC;
     --nunito-sans: 'Nunito Sans';
-    all: initial;
 }
 
 @layer base {
     * {
         @apply border-border border-solid;
-        @apply text-primary;
         @apply font-sans;
+
+        /* this styles overrides the style coming from the wordpress body element */
+        @apply text-primary text-base font-normal tracking-normal leading-none p-0 m-0;
     }
 }
