@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: My React Plugin
+ * Plugin Name: Condolences React Dashboard
  */
 
 function my_react_plugin_scripts() {
@@ -25,4 +25,4 @@ function my_react_shortcode() {
     return '<div id="condolences-react-dashboard"></div>';
 }
 
-add_shortcode('my-react-app', 'my_react_shortcode');
+add_shortcode('condolences-react-dashboard', 'my_react_shortcode');

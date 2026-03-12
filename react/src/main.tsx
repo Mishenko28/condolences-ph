@@ -1,11 +1,20 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import { StrictMode } from "react"
+import { createRoot } from "react-dom/client"
+import App from "./App"
+import styles from "./index.css?inline"
 
+const host = document.getElementById("condolences-react-dashboard")!
+const shadow = host.attachShadow({ mode: "closed" })
 
-createRoot(document.getElementById('condolences-react-dashboard')!).render(
+const style = document.createElement("style")
+style.textContent = styles
+shadow.appendChild(style)
+
+const container = document.createElement("div")
+shadow.appendChild(container)
+
+createRoot(container).render(
   <StrictMode>
     <App />
-  </StrictMode>,
+  </StrictMode>
 )

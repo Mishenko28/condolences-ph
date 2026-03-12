@@ -7,15 +7,16 @@
     --font-family-sans: var(--nunito-sans);
 }
 
-:root {
+:host {
     --primary: #333333;
     --border: #E5E2DC;
     --nunito-sans: 'Nunito Sans';
+    all: initial;
 }
 
 @layer base {
     * {
-        @apply border-border;
+        @apply border-border border-solid;
         @apply text-primary;
         @apply font-sans;
     }
