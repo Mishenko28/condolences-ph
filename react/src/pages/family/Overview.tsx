@@ -93,7 +93,7 @@ export default function Overview() {
             <div className="flex-1 flex flex-col gap-8">
                 <div className="flex gap-3">
                     {totals.map(({ title, value }) => (
-                        <div key={title} className="w-full flex flex-col items-center justify-center rounded-2xl bg-gray-100 p-5 border border-gray-200">
+                        <div key={title} className="w-full flex flex-col items-center justify-center gap-2 rounded-2xl bg-gray-100 p-5 border border-gray-200">
                             <h2 className="font-bold text-2xl">{value}</h2>
                             <h1 className="text-sm font-medium text-primary/50" >{title}</h1>
                         </div>
@@ -102,8 +102,8 @@ export default function Overview() {
                 <ContentCard>
                     <ContentCardTitle>ABOUT CONDOLENCES PH</ContentCardTitle>
                     <ContentCardContent>
-                        <p className="text-primary/80 text-justify">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam. nt sunt in culpa qui officia deserunt mollit anim id est.</p>
-                        <p className="text-primary/80 text-justify">laborum consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <p className="text-primary/80 text-justify leading-relaxed">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam. nt sunt in culpa qui officia deserunt mollit anim id est.</p>
+                        <p className="text-primary/80 text-justify leading-relaxed">laborum consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
                     </ContentCardContent>
                 </ContentCard>
                 <ContentCard>
@@ -115,7 +115,7 @@ export default function Overview() {
                                     <Badge color={color}>
                                         {stringToIcon(name)}
                                     </Badge>
-                                    <div className="space-y-1">
+                                    <div className="space-y-2">
                                         <WithBoldText message={text} boldText={boldText} />
                                         <p className="text-sm text-primary/70 font-medium">{time}</p>
                                     </div>

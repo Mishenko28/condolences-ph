@@ -1,3 +1,5 @@
+export type BadgeColors = "blue" | "red" | "green" | "orange" | "gray"
+
 export default function Badge({
     children,
     className,
@@ -5,7 +7,7 @@ export default function Badge({
     ...props
 }: React.ComponentProps<"div"> & {
     children?: React.ReactNode
-    color?: "blue" | "red" | "green" | "orange" | "gray"
+    color?: BadgeColors
 }) {
     const colors = {
         blue: "bg-blue-700/30 text-blue-700 [&_svg]:stroke-blue-700",
@@ -16,7 +18,7 @@ export default function Badge({
     }
 
     return (
-        <div className={`${className} has-[svg]:p-3 p-2 rounded-full font-medium text-sm w-min [&_svg]:size-4 ${colors[color]}`} {...props}>
+        <div className={`${className} has-[svg]:p-3 py-2 px-3 rounded-full font-medium text-sm w-min [&_svg]:size-4 ${colors[color]}`} {...props}>
             {children}
         </div>
     )

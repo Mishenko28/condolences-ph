@@ -10,7 +10,7 @@ export function PostCard({ children, className, ...props }: React.ComponentProps
 
 export function PostCardHeading({ children, className, ...props }: React.ComponentProps<"h1"> & { children?: React.ReactNode }) {
     return (
-        <h1 className={`${className} font-medium`} {...props}>
+        <h1 className={`${className} font-medium leading-normal text-lg`} {...props}>
             {children}
         </h1>
     )

@@ -5,7 +5,7 @@ export default function Sidebar() {
     return (
         <div className='flex flex-col items-center gap-8 w-xs h-150 p-12 bg-border/30 border rounded-2xl'>
             <img src="./1x1.png" alt="profile_img" className="w-30 h-30 rounded-full border-4" />
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center gap-2">
                 <h1 className="font-bold text-lg">Jinifir Dought</h1>
                 <h2 className="text-primary/90">jinifirdought@gmail.com</h2>
             </div>
