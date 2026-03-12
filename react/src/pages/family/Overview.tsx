@@ -1,16 +1,20 @@
 import * as Icons from "lucide-react"
-import { CardFamily, CardFamilyContent, CardFamilyTitle } from "../../components/CardFamily"
+import { ContentCard, ContentCardContent, ContentCardTitle } from "../../components/ContentCard"
 import Badge from "../../components/Badge"
 import { PostCard, PostCardButton, PostCardHeading } from "../../components/PostCard"
 import { Fragment } from "react/jsx-runtime"
 
 type RecetActivitiesType = {
     id: string
-    message: string
+    message: {
+        text: string
+        boldText: string
+    }
     time: string
-    icon: keyof typeof Icons
-    boldText: string
-    color: "blue" | "red" | "green" | "orange" | "gray"
+    icon: {
+        name: keyof typeof Icons
+        color: "blue" | "red" | "green" | "orange" | "gray"
+    }
 }
 
 const totals = [
@@ -23,43 +27,63 @@ const totals = [
 const recetActivities: RecetActivitiesType[] = [
     {
         id: "b22a672f-d860-4165-b5f0-2b775a95030b",
-        message: "Carlos Garcia left a message of sympathy on the Obituary Listing.",
+        message: {
+            text: "Carlos Garcia left a message of sympathy on the Obituary Listing.",
+            boldText: "Carlos Garcia"
+        },
         time: "2 hours ago",
-        icon: "MessageSquareMoreIcon",
-        boldText: "Carlos Garcia",
-        color: "blue"
+        icon: {
+            color: "blue",
+            name: "MessageSquareMoreIcon"
+        }
     },
     {
         id: "13ef0d79-2a40-4d52-b71e-436653cfeae2",
-        message: "Pedro Reyes left a message of sympathy on the Obituary Listing.",
+        message: {
+            text: "Pedro Reyes left a message of sympathy on the Obituary Listing.",
+            boldText: "Pedro Reyes"
+        },
         time: "5 hours ago",
-        icon: "MessageSquareMoreIcon",
-        boldText: "Pedro Reyes",
-        color: "blue"
+        icon: {
+            color: "blue",
+            name: "MessageSquareMoreIcon"
+        }
     },
     {
         id: "b22a672f-d860-4165-b5f0-2b775a95030b",
-        message: `You published a blog post: "Remembering Nanay: Her Favorite Recipes".`,
+        message: {
+            text: `You published a blog post: "Remembering Nanay: Her Favorite Recipes".`,
+            boldText: "Remembering Nanay: Her Favorite Recipes"
+        },
         time: "1 day ago",
-        icon: "MessageSquareTextIcon",
-        boldText: "Remembering Nanay: Her Favorite Recipes",
-        color: "orange"
+        icon: {
+            color: "orange",
+            name: "MessageSquareTextIcon"
+        },
     },
     {
         id: "2153c303-db1e-493c-a1b8-7508fd8c76a9",
-        message: "Your Obituary Listing for Maria Santos is now live and set to Public.",
+        message: {
+            text: "Your Obituary Listing for Maria Santos is now live and set to Public.",
+            boldText: "Maria Santos"
+        },
         time: "2 day ago",
-        icon: "ScrollTextIcon",
-        boldText: "Maria Santos",
-        color: "green"
+        icon: {
+            color: "green",
+            name: "ScrollTextIcon"
+        }
     },
     {
         id: "6125691a-3c56-4b8b-b0b9-138cca2c0de2",
-        message: "Event created: Wake — Maria Santos at Eternal Peace Chapel.",
+        message: {
+            text: "Event created: Wake — Maria Santos at Eternal Peace Chapel.",
+            boldText: "Wake — Maria Santos"
+        },
         time: "3 day ago",
-        icon: "CalendarDaysIcon",
-        boldText: "Wake — Maria Santos",
-        color: "blue"
+        icon: {
+            color: "blue",
+            name: "CalendarDaysIcon"
+        },
     },
 ]
 
@@ -75,32 +99,32 @@ export default function Overview() {
                         </div>
                     ))}
                 </div>
-                <CardFamily>
-                    <CardFamilyTitle>ABOUT CONDOLENCES PH</CardFamilyTitle>
-                    <CardFamilyContent>
+                <ContentCard>
+                    <ContentCardTitle>ABOUT CONDOLENCES PH</ContentCardTitle>
+                    <ContentCardContent>
                         <p className="text-primary/80 text-justify">Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam. nt sunt in culpa qui officia deserunt mollit anim id est.</p>
                         <p className="text-primary/80 text-justify">laborum consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    </CardFamilyContent>
-                </CardFamily>
-                <CardFamily>
-                    <CardFamilyTitle>RECENT ACTIVITY</CardFamilyTitle>
-                    <CardFamilyContent className="flex flex-col gap-3">
-                        {recetActivities.map(({ id, message, time, icon, boldText, color }, index) => (
+                    </ContentCardContent>
+                </ContentCard>
+                <ContentCard>
+                    <ContentCardTitle>RECENT ACTIVITY</ContentCardTitle>
+                    <ContentCardContent className="flex flex-col gap-3">
+                        {recetActivities.map(({ id, message: { text, boldText }, time, icon: { color, name } }, index) => (
                             <Fragment key={id}>
                                 <div className="flex items-center gap-4">
                                     <Badge color={color}>
-                                        {stringToIcon(icon)}
+                                        {stringToIcon(name)}
                                     </Badge>
                                     <div className="space-y-1">
-                                        <WithBoldText message={message} boldText={boldText} />
+                                        <WithBoldText message={text} boldText={boldText} />
                                         <p className="text-sm text-primary/70 font-medium">{time}</p>
                                     </div>
                                 </div>
                                 {index !== recetActivities.length - 1 && <hr className="border-primary/20" />}
                             </Fragment>
                         ))}
-                    </CardFamilyContent>
-                </CardFamily>
+                    </ContentCardContent>
+                </ContentCard>
             </div>
             <div className="flex flex-col gap-6">
                 <PostCard>
