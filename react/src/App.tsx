@@ -1,6 +1,6 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
-import FamilyAccess from "./pages/family/family-access";
-import Overview from "./pages/family/overview";
+import FamilyAccess from "./pages/family/FamilyAccess";
+import Overview from "./pages/family/Overview";
 import ObituaryListings from "./pages/family/ObituaryListings";
 
 export default function App() {

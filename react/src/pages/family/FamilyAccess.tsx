@@ -4,9 +4,9 @@ import { Outlet } from "react-router-dom"
 
 export default function FamilyAccess() {
     return (
-        <div className="flex p-8 gap-8">
+        <div className="tw:flex tw:p-8 tw:gap-8">
             <Sidebar />
-            <div className="flex-1 space-y-4 py-4">
+            <div className="tw:flex-1 tw:space-y-4 tw:py-4">
                 <Navigations />
                 <Outlet />
             </div>
