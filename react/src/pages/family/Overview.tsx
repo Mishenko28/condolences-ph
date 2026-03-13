@@ -1,6 +1,6 @@
 import * as Icons from "lucide-react"
 import { ContentCard, ContentCardContent, ContentCardTitle } from "../../components/ContentCard"
-import Badge from "../../components/Badge"
+import Badge, { type BadgeColors } from "../../components/Badge"
 import { PostCard, PostCardButton, PostCardHeading } from "../../components/PostCard"
 import { Fragment } from "react/jsx-runtime"
 
@@ -13,7 +13,7 @@ type RecetActivitiesType = {
     time: string
     icon: {
         name: keyof typeof Icons
-        color: "blue" | "red" | "green" | "orange" | "gray"
+        color: BadgeColors
     }
 }
 

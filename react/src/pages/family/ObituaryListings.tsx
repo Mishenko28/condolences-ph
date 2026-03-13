@@ -3,6 +3,7 @@ import { PostCard, PostCardButton, PostCardHeading } from "../../components/Post
 import { ContentCard, ContentCardTitle, ContentCardContent } from "../../components/ContentCard";
 import Badge, { type BadgeColors } from "../../components/Badge";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 type ObituaryType = {
     id: string
@@ -108,14 +109,15 @@ export default function ObituaryListings() {
                     <ContentCardTitle>OBITUARY LISTINGS</ContentCardTitle>
                     <ContentCardContent>
                         {obituaries.map(({ id, name, relation, dates: { birth, death }, address, status: { text, color }, numberOfMssg }, index) => (
-                            <div
+                            <Link
+                                to={id}
                                 key={id}
-                                className="w-full flex gap-4 items-center rounded-2xl bg-gray-100 hover:bg-gray-200/80 p-5 border border-gray-200 cursor-pointer"
+                                className="w-full flex gap-4 items-center rounded-2xl bg-gray-100 hover:bg-gray-200/80 p-6 border border-gray-200 cursor-pointer"
                                 onMouseEnter={() => setHoveredObi(index)}
                                 onMouseLeave={() => setHoveredObi(null)}
                             >
                                 <img src="./1x1.png" alt="profile_img" className="w-18 h-18 rounded-full border-4" />
-                                <div className="flex-1 space-y-2 text-sm">
+                                <div className="flex-1 space-y-1.5 text-sm">
                                     <h1 className="text-lg font-bold">{name}</h1>
                                     <h2 className="font-bold text-primary/50 uppercase">{relation}</h2>
                                     <h3 className="font-medium text-primary/90">{birth} — {death}</h3>
@@ -126,7 +128,7 @@ export default function ObituaryListings() {
                                     <p className="text-sm font-medium text-primary/70">{numberOfMssg} Messages</p>
                                 </div>
                                 <ChevronRightIcon style={hoveredObi === index ? { translate: "8px" } : undefined} className="stroke-primary transition" />
-                            </div>
+                            </Link>
                         ))}
                     </ContentCardContent>
                 </ContentCard>
